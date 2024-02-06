@@ -5,6 +5,7 @@ from spotipy.oauth2 import SpotifyClientCredentials
 spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials())
 app = typer.Typer()
 
+
 def uri_from_artist(name: str):
     results = spotify.search(q="artist:" + name, type="artist")
     items = results["artists"]["items"]
